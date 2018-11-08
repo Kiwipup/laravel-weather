@@ -14,7 +14,15 @@
                         </div>
                     @endif
 
-                    You are logged in!
+
+
+
+Display cards for each saved location here.
+
+
+
+
+
                 </div>
             </div>
         </div>
