@@ -13,7 +13,8 @@ class LocationController extends Controller
      */
     public function index()
     {
-        return view('locations.index');
+        $zips = \App\Location::where('user_id', \Auth::id())->orderBy('name')->get();
+        return view('locations.index', compact('zips'));
     }
 
     /**
@@ -34,7 +35,12 @@ class LocationController extends Controller
      */
     public function store(Request $request)
     {
-        return "Save a new location";
+        $location = new \App\Location;
+        $location->user_id = \Auth::id();
+        $location->name = $request->input('newName');
+        $location->zipcode = $request->input('newZip');
+        $location->save();
+        return redirect()->route('locations.index');
     }
 
     /**
@@ -79,6 +85,8 @@ class LocationController extends Controller
      */
     public function destroy($id)
     {
-        return "Delete a location";
+        $location = \App\Location::find($id);
+        $location->delete();
+        return redirect()->route('locations.index');
     }
 }
