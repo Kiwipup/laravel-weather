@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $zips = \App\Location::where('user_id', \Auth::id())->orderBy('name')->get();
+        return view('home', compact('zips'));
     }
 }
