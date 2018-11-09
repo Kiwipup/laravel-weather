@@ -85,6 +85,10 @@ class LocationController extends Controller
      */
     public function destroy($id)
     {
+
+        // TODO: shouldn't be able to delete a location
+        // that belongs to another user.
+
         $location = \App\Location::find($id);
         $location->delete();
         return redirect()->route('locations.index');
