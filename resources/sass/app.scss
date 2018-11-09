@@ -1,6 +1,7 @@
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Playfair+Display');
 
 // Variables
 @import 'variables';
@@ -11,4 +12,11 @@
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+// Card Header font
+.card-header {
+    font-family: $card-header-font-family;
+    font-weight: bold;
+    font-size: 1.25rem;
 }
