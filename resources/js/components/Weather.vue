@@ -72,9 +72,7 @@ export default {
         },
 
         decideImage(icon) {
-
             let image = "fa-cloud-meatball";
-
             switch (icon) {
                 case '01d':
                     // Clear Sky
@@ -112,11 +110,8 @@ export default {
                     // Mist
                     image = "fa-water";
                     break;
-                
             }
-
             return image;
-
         }
 
     }
